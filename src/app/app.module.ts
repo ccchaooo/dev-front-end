@@ -1,26 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { OrderDetailComponent } from './component/order-detail/order-detail.component';
+import { AppComponent }         from './app.component';
+
+import { AppRoutingModule }     from './app-routing.module';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { OrdersComponent } from './page/orders/orders.component';
-import { MessagesComponent } from './conponent/messages/messages.component';
+import { OrderDetailComponent } from './component/order-detail/order-detail.component';
+import { MessagesComponent } from './component/messages/messages.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    OrderDetailComponent,
-    OrdersComponent,
-    MessagesComponent,
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    OrdersComponent,
+    OrderDetailComponent,
+    MessagesComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
