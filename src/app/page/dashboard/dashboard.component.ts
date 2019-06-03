@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/model/Order';
-import { OrderService } from 'src/app/service/order.service';
+import { ProductService } from 'src/app/service/product.service';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,16 +9,16 @@ import { OrderService } from 'src/app/service/order.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  orders: Order[] = [];
+  products: Product[] = [];
 
-  constructor(private orderService: OrderService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getOrderes();
   }
 
   getOrderes(): void {
-    this.orderService.getOrders()
-      .subscribe(orders => this.orders = orders.slice(1, 5));
+    this.productService.getProducts()
+      .subscribe(products => this.products = products.slice(1, 100));
   }
 }
