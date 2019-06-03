@@ -1,7 +1,7 @@
 <h2>My Orders</h2>
 <ul class="orders">
   <li *ngFor="let order of orders">
-    <a routerLink="/detail/{{orders.id}}">
+    <a routerLink="/orderDetail/{{order.id}}">
       <span class="badge">{{order.id}}</span> {{order.name}}
     </a>
   </li>
