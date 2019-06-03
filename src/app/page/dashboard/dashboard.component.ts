@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getOrderes(): void {
     this.productService.getProducts()
-      .subscribe(products => this.products = products.slice(1, 100));
+      .subscribe(products => this.products = products.slice(1, 5));
   }
 }
